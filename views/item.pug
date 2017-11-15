@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= item.category
+    h5 Quantity #{item.quantity}
+    hr
+    h5 Edited By #{author}
+    hr
+    if user
+        if user.id ==item.author
+            a.btn.btn-default(href='/item/edit/' + item.id) Edit
+            a.btn.btn-danger.delete-item(href='#', data-id=item._id) Delete

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 #{title}
+    form(method='POST', action='/item/edit/' + item._id)
+        #form-group
+            label Name:
+            input.form-control(name='name', type='text' value=item.name)
+        #form-group
+            label Category:
+            input.form-control(name='category', type='text' value=item.category)
+        #form-group
+            label Quanitity:
+            input.form-control(name='quanitity', type='text' value=item.quantity)
+        br
+        input.btn.btn-primary(type='submit' value='submit')
